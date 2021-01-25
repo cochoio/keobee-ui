@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "./dist",
+    "alwaysStrict": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["stories", ".storybook", "node_modules"]
+}
