@@ -28,7 +28,7 @@ jobs:
           node-version: "12.x"
 
       - name: Installing NPM
-        run: npm run bootstrap
+        run: npm install
 
       - name: Building UI Component
         run: npm run build-storybook
