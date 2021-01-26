@@ -8,15 +8,21 @@ import { DefaultTheme } from "styled-components"
 
 export type IUiContext = {
   theme: DefaultTheme
+  ns?: string
 }
 
 export const UiContext = createContext<IUiContext>({
   theme,
+  ns: "kb",
 })
 
 export const UiContextProvider: React.FC = ({ children }) => {
+  const defaultConfig = {
+    theme,
+    ns: "kb",
+  }
   return (
-    <UiContext.Provider value={{ theme }}>
+    <UiContext.Provider value={defaultConfig}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
       <GlobalStyle />
     </UiContext.Provider>

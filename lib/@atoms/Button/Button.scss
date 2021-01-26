@@ -1,0 +1,11 @@
+@import "../../style/import";
+
+
+
+.#{$prefix}-button {
+  @include size;
+
+  &__primary {
+    border: 1px solid map-get($colors, 'primary');
+  }
+}

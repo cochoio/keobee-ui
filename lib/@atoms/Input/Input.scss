@@ -1,0 +1,11 @@
+@import "../../style/import";
+
+@debug #{$prefix}-input;
+
+.#{$prefix}--input {
+  @include size;
+
+  &__primary {
+    border: 1px solid map-get($colors, 'primary');
+  }
+}

@@ -1,0 +1,11 @@
+$colors: (
+        "primary": #6b90dc,
+        "secondary": #697185,
+        "dark": #333,
+        "lightDark": #666,
+        "lightGray": #e6e6e6,
+        "border": #dae1e6,
+        "disabled": #6c757d65
+);
+
+@debug map-get($colors, "primary");
