@@ -6,6 +6,7 @@ import replace from "@rollup/plugin-replace"
 import commonjs from "@rollup/plugin-commonjs"
 import url from "@rollup/plugin-url"
 import peerDepsExternal from "rollup-plugin-peer-deps-external"
+import scss from "rollup-plugin-scss"
 import pkg from "./package.json"
 
 const globals = {
@@ -21,8 +22,8 @@ export default {
   output: [
     {
       name: pkg.name,
-      file: "./dist/index.js",
-      format: "umd",
+      file: pkg.main,
+      format: "es",
       sourcemap: true,
       globals,
     },
@@ -47,5 +48,6 @@ export default {
     url({
       include: ["**/*.woff", "**/*.woff2"],
     }),
+    scss(),
   ],
 }

@@ -6,5 +6,5 @@
     "alwaysStrict": true,
     "esModuleInterop": true
   },
-  "exclude": ["stories", ".storybook", "node_modules"]
+  "exclude": ["stories", ".storybook", "node_modules", "storybook-static"]
 }
