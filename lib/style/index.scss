@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body {
   font-size: 12px;
   font-family: "Nanum Gothic", sans-serif;
@@ -17,10 +18,18 @@ a, button, input, textarea {
     outline: none;
   }
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 li {
   list-style-type: none;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
 }
