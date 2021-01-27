@@ -1,9 +1,13 @@
 # keobee-ui
 
-...TODO
+React Admin Template UI
 
-## Roadmap
+## Getting Start
 
-- [ ] Checkbox
-- [ ] Input 개선
-- [ ] Button styled-components 제거
+_yarn_
+
+```
+npm i keobee-ui
+// or
+yarn add keobee-ui 
+```
