@@ -1,30 +1,32 @@
-import React, { createContext, useContext } from "react"
-import { ThemeProvider } from "styled-components"
-import GlobalStyle from "../style/global-style"
-
-import theme from "../style/theme"
-
-import { DefaultTheme } from "styled-components"
+import React, { createContext } from "react"
 
 export type IUiContext = {
-  theme: DefaultTheme
   ns?: string
+  getPrefix: (element: string) => string
 }
 
 export const UiContext = createContext<IUiContext>({
-  theme,
   ns: "kb",
+  getPrefix: () => "",
 })
 
 export const UiContextProvider: React.FC = ({ children }) => {
   const defaultConfig = {
-    theme,
     ns: "kb",
   }
+
+  const getPrefix = (element: string) => {
+    return `${defaultConfig.ns}--${element}`
+  }
+
+  const _providerValue = () => {
+    return {
+      ...defaultConfig,
+      getPrefix,
+    }
+  }
+
   return (
-    <UiContext.Provider value={defaultConfig}>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-      <GlobalStyle />
-    </UiContext.Provider>
+    <UiContext.Provider value={_providerValue()}>{children}</UiContext.Provider>
   )
 }

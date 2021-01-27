@@ -11,8 +11,8 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, variant = "primary", ...props }, ref) => {
-    const ui = useContext(UiContext)
-    const prefixClass = `${ui.ns}--input`
+    const { getPrefix } = useContext(UiContext)
+    const prefixClass = getPrefix("input")
 
     const _className = cx(prefixClass, [
       `${prefixClass}__${variant}`,
