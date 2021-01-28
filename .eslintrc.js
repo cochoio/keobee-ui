@@ -1,7 +1,6 @@
 module.exports = {
   root: true,
   extends: [
-    "airbnb",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
@@ -58,4 +57,5 @@ module.exports = {
     "no-plusplus": "off",
     "no-redeclare": "off",
   },
+  ignorePatterns: ["node_modules"],
 }

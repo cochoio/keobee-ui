@@ -1,17 +1,21 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-html, body {
-  font-size: 12px;
-  font-family: "Nanum Gothic", sans-serif;
-  font-weight: 300;
+html,
+body {
   background-color: #edf0f5;
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
 }
 
-a, button, input, textarea {
+a,
+button,
+input,
+textarea {
   font-family: "Nanum Gothic", sans-serif;
   font-weight: 300;
   &:focus {
@@ -20,8 +24,8 @@ a, button, input, textarea {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 li {
@@ -29,7 +33,7 @@ li {
 }
 
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
   display: block;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
