@@ -30,8 +30,17 @@ jobs:
       - name: Installing NPM
         run: npm install
 
+      - name: lint
+        run: npm run lint
+
       - name: Building UI Component
         run: npm run build-storybook
+
+      - name: release
+        uses: cycjimmy/semantic-release-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - uses: shallwefootball/s3-upload-action@master
         name: Upload S3
@@ -40,8 +49,8 @@ jobs:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: 'storybook-static'
-          destination_dir: ''
+          source_dir: "storybook-static"
+          destination_dir: ""
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
