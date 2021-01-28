@@ -23,11 +23,11 @@
     "build": "rollup -c",
     "build-storybook": "build-storybook",
     "dev": "concurrently \"yarn storybook\" \"yarn tsc:check\"",
-    "storybook": "start-storybook -p 6006",
-    "test": "tsc --check",
-    "lint:scss": "stylelint ./lib/**/*.scss",
+    "lint": "yarn lint:js && yarn lint:scss",
     "lint:js": "eslint './lib/**/*.{ts,tsx,js,jsx}'",
-    "lint": "yarn lint:js && yarn lint:scss"
+    "lint:scss": "stylelint ./lib/**/*.scss",
+    "storybook": "start-storybook -p 6006",
+    "test": "tsc --check"
   },
   "husky": {
     "hooks": {
