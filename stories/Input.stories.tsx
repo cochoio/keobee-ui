@@ -1,6 +1,6 @@
 import React from "react"
 import { Story, Meta } from "@storybook/react/types-6-0"
-import { Input, InputProps } from "@lib/@atoms/Input"
+import { Input, InputProps } from "@lib/atoms/Input"
 import { action } from "@storybook/addon-actions"
 
 export default {
