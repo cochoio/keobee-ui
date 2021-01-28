@@ -57,5 +57,4 @@ module.exports = {
     "no-plusplus": "off",
     "no-redeclare": "off",
   },
-  ignorePatterns: ["node_modules"],
 }

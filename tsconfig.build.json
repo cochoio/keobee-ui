@@ -4,7 +4,11 @@
     "declaration": true,
     "outDir": "./dist",
     "alwaysStrict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "lib",
+    "paths": {
+      "@lib/*": ["./*"]
+    }
   },
   "exclude": ["stories", ".storybook", "node_modules", "storybook-static"]
 }

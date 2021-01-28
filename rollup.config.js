@@ -33,7 +33,8 @@ export default {
     replace(),
     resolve({ extensions }),
     commonjs({
-      include: "node_modules/**",
+      include: ["node_modules/**"],
+      exclude: ["node_modules/process-es6/**"],
     }),
     typescript({
       tsconfig: "tsconfig.build.json",
