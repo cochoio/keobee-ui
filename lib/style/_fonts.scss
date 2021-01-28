@@ -2,7 +2,8 @@
   font-display: swap;
   font-family: "Nanum Gothic";
   font-weight: 100;
-  src: url(/fonts/NanumGothicLight.woff) format("woff"),
+  src:
+    url(/fonts/NanumGothicLight.woff) format("woff"),
     url(/fonts/NanumGothicLight.woff2) format("woff2");
 }
 
@@ -10,7 +11,8 @@
   font-display: swap;
   font-family: "Nanum Gothic";
   font-weight: 400;
-  src: url(/fonts/NanumGothic.woff) format("woff"),
+  src:
+    url(/fonts/NanumGothic.woff) format("woff"),
     url(/fonts/NanumGothic.woff2) format("woff2");
 }
 
@@ -18,7 +20,8 @@
   font-display: swap;
   font-family: "Nanum Gothic";
   font-weight: 600;
-  src: url(/fonts/NanumGothicBold.woff2) format("woff2"),
+  src:
+    url(/fonts/NanumGothicBold.woff2) format("woff2"),
     url(/fonts/NanumGothicBold.woff) format("woff");
 }
 
@@ -26,6 +29,7 @@
   font-display: swap;
   font-family: "Nanum Gothic";
   font-weight: 800;
-  src: url(/fonts/NanumGothicExtraBold.woff) format("woff"),
+  src:
+    url(/fonts/NanumGothicExtraBold.woff) format("woff"),
     url(/fonts/NanumGothicExtraBold.woff2) format("woff2");
 }
