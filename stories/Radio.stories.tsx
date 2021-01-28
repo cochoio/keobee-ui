@@ -1,6 +1,6 @@
 import React from "react"
 import { Story, Meta } from "@storybook/react/types-6-0"
-import { Radio, RadioProps } from "@lib/@atoms/Radio"
+import { Radio, RadioProps } from "@lib/atoms/Radio"
 import { action } from "@storybook/addon-actions"
 
 export default {

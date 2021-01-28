@@ -11,7 +11,19 @@ module.exports = {
     config.resolve.plugins.push(new TsConfigPathsPlugin({}))
     config.module.rules.push({
       test: /\.scss$/,
-      use: ["style-loader", "css-loader", "sass-loader"],
+      use: [
+        "style-loader",
+        {
+          loader: "css-loader",
+          options: {
+            importLoaders: 1,
+            modules: {
+              localIdentName: "[path][name]__[local]--[hash:base64:5]",
+            },
+          },
+        },
+        "sass-loader",
+      ],
       include: path.resolve(__dirname, "../"),
     })
     return config

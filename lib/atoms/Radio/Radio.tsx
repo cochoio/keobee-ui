@@ -22,7 +22,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
       <label className={_className}>
         <input type="radio" {...props} ref={ref} />
         <span />
-        {label && <span>{label}</span>}
       </label>
     )
   },
