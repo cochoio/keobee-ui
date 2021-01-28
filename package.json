@@ -32,7 +32,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "sort-package-json"
+      "pre-commit": "sort-package-json && pretty-quick --staged"
     }
   },
   "devDependencies": {
