@@ -1,7 +1,7 @@
-@use "../../style/import" as kb;
+@import "../../style/import";
 
-.#{kb.$prefix}--checkbox {
-  @include kb.base;
+.#{$prefix}--checkbox {
+  @include base;
   display: inline-block;
   vertical-align: middle;
   height: 20px;
@@ -20,7 +20,7 @@
       background-color: #ffffff;
       display: inline-block;
       vertical-align: middle;
-      border: 1px solid map-get(kb.$colors, "border");
+      border: 1px solid map-get($colors, "border");
 
       & > svg {
         display: none;
@@ -28,7 +28,7 @@
     }
 
     &:checked + span {
-      background-color: map-get(kb.$colors, "primary");
+      background-color: map-get($colors, "primary");
 
       & > svg {
         width: 100%;

@@ -1,7 +1,7 @@
-@use "../../style/import" as kb;
+@import "../../style/import.scss";
 
-.#{kb.$prefix}--radio {
-  @include kb.base;
+.#{$prefix}--radio {
+  @include base;
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -17,7 +17,7 @@
       background-color: #ffffff;
       display: block;
       vertical-align: middle;
-      border: 1px solid map-get(kb.$colors, "border");
+      border: 1px solid map-get($colors, "border");
 
       &:after {
         content: "";
@@ -39,7 +39,7 @@
 
     &:checked + span {
       &:after {
-        background-color: map-get(kb.$colors, "primary");
+        background-color: map-get($colors, "primary");
       }
     }
   }

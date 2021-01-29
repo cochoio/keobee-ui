@@ -1,9 +1,9 @@
-@use "../../style/import.scss";
+@import "../../style/import.scss";
 
 .select {
-  @include import.input;
+  @include input;
   display: inline-block;
-  border: 1px solid map-get(import.$colors, "border");
+  border: 1px solid map-get($colors, "border");
   background-color: #ffffff;
 }
 
@@ -11,7 +11,7 @@
   width: 100%;
   height: 100%;
   position: relative;
-  color: map-get(import.$colors, "lightDark");
+  color: map-get($colors, "lightDark");
 }
 
 .caret {

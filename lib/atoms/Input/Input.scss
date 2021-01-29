@@ -1,10 +1,10 @@
-@use "../../style/import.scss" as kb;
+@import "../../style/import.scss";
 
-.#{kb.$prefix}--input {
-  @include kb.base;
-  @include kb.input;
+.#{$prefix}--input {
+  @include base;
+  @include input;
 
   &__primary {
-    border: 1px solid map-get(kb.$colors, "primary");
+    border: 1px solid map-get($colors, "primary");
   }
 }

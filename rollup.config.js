@@ -1,6 +1,6 @@
 import typescript from "rollup-plugin-typescript2"
 import resolve from "@rollup/plugin-node-resolve"
-import babel from "rollup-plugin-babel"
+import babel from "@rollup/plugin-babel"
 import { terser } from "rollup-plugin-terser"
 import replace from "@rollup/plugin-replace"
 import commonjs from "@rollup/plugin-commonjs"
@@ -32,10 +32,7 @@ export default {
   plugins: [
     replace(),
     resolve({ extensions }),
-    commonjs({
-      include: ["node_modules/**"],
-      exclude: ["node_modules/process-es6/**"],
-    }),
+    commonjs(),
     typescript({
       tsconfig: "tsconfig.build.json",
       clean: true,
