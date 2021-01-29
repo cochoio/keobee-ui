@@ -36,10 +36,6 @@ jobs:
       - name: build
         run: npm run build
 
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-
       - name: Building UI Component
         run: npm run build-storybook
 
@@ -52,6 +48,10 @@ jobs:
           aws_bucket: ${{ secrets.AWS_BUCKET }}
           source_dir: "storybook-static"
           destination_dir: ""
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
 
       - uses: 8398a7/action-slack@v3
         with:
