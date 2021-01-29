@@ -25,7 +25,6 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c",
-    "prebuild-storybook": "rimraf storybook-static",
     "build-storybook": "build-storybook",
     "lint": "yarn lint:js && yarn lint:scss",
     "lint:js": "eslint './lib/**/*.{ts,tsx,js,jsx}'",
