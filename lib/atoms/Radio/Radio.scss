@@ -1,10 +1,9 @@
-@import "../../style/import";
+@use "../../style/import" as kb;
 
-.#{$prefix}--radio {
+.#{kb.$prefix}--radio {
+  @include kb.base;
   display: inline-block;
   vertical-align: middle;
-  height: 20px;
-  padding-left: 20px;
   position: relative;
 
   input[type="radio"] {
@@ -15,13 +14,10 @@
       height: 20px;
       padding: 3px;
       border-radius: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
       background-color: #ffffff;
-      display: inline-block;
+      display: block;
       vertical-align: middle;
-      border: 1px solid map-get($colors, "border");
+      border: 1px solid map-get(kb.$colors, "border");
 
       &:after {
         content: "";
@@ -43,7 +39,7 @@
 
     &:checked + span {
       &:after {
-        background-color: map-get($colors, "primary");
+        background-color: map-get(kb.$colors, "primary");
       }
     }
   }
