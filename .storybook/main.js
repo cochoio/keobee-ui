@@ -16,9 +16,18 @@ module.exports = {
         {
           loader: "css-loader",
           options: {
-            importLoaders: 1,
+            importLoaders: 2,
+            esModule: true,
+            sourceMap: true,
             modules: {
-              localIdentName: "[path][name]__[local]--[hash:base64:5]",
+              auto: (resourcePath) => {
+                const isModuleStyle = resourcePath.endsWith(".module.scss")
+                if (isModuleStyle) {
+                  console.log(`Module Style: ${resourcePath}`)
+                }
+                return isModuleStyle
+              },
+              localIdentName: "[name]__[local]--[hash:base64:5]",
             },
           },
         },

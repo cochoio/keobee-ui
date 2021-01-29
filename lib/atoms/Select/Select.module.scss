@@ -1,0 +1,23 @@
+@use "../../style/import.scss";
+
+.select {
+  @include import.input;
+  display: inline-block;
+  border: 1px solid map-get(import.$colors, "border");
+  background-color: #ffffff;
+}
+
+.controller {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: map-get(import.$colors, "lightDark");
+}
+
+.caret {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

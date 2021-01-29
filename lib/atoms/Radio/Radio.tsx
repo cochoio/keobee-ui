@@ -16,7 +16,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
 
     const prefix = getPrefix("radio")
 
-    const _className = cx(prefix, [], {})
+    const _className = cx([prefix], {})
 
     return (
       <label className={_className}>

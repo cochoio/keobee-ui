@@ -1,5 +1,34 @@
+@use "colors";
+
+@mixin fonts($weight: 300, $size: 12px) {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin base {
+  box-sizing: border-box;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  &:focus {
+    outline: none;
+  }
+}
+
 @mixin size($size: "medium") {
   font-size: 1rem;
   margin: 0;
   padding: 7px 14px;
+}
+
+@mixin input {
+  @include size;
+
+  background-color: #fff;
+  border: 1px solid transparent;
+  height: 30px;
+  min-width: 155px;
+  text-align: start;
 }
