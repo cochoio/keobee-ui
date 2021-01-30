@@ -1,5 +1,5 @@
 import React from "react"
-import { UiContextProvider } from "@lib/config-provider"
+import { Provider } from "@lib/config-provider"
 
 import "../lib/style/index.scss"
 
@@ -9,8 +9,8 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <UiContextProvider>
+    <Provider>
       <Story />
-    </UiContextProvider>
+    </Provider>
   ),
 ]
