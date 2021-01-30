@@ -1,4 +1,34 @@
 // 유틸리티 변수
-//@for $i from 1 to 100 {
-//
-//}
+@for $i from 0 to 11 {
+  $space: $i * 5;
+  .m-#{$space} {
+    margin: #{$space}px !important;
+  }
+  .mt-#{$space} {
+    margin-top: #{$space}px !important;
+  }
+  .mb-#{$space} {
+    margin-bottom: #{$space}px !important;
+  }
+  .ml-#{$space} {
+    margin-left: #{$space}px !important;
+  }
+  .mr-#{$space} {
+    margin-right: #{$space}px !important;
+  }
+  .p-#{$space} {
+    padding: #{$space}px !important;
+  }
+  .pt-#{$space} {
+    padding-top: #{$space}px !important;
+  }
+  .pb-#{$space} {
+    padding-bottom: #{$space}px !important;
+  }
+  .pl-#{$space} {
+    padding-left: #{$space}px !important;
+  }
+  .pr-#{$space} {
+    padding-right: #{$space}px !important;
+  }
+}

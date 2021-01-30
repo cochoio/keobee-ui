@@ -1,0 +1,17 @@
+@import "../../style/import";
+
+$padding: 20px 35px;
+
+.#{$prefix}__panel {
+  background-color: #ffffff;
+  border: 1px solid map-get($colors, "border");
+
+  &-header {
+    padding: $padding;
+    border-bottom: 1px solid map-get($colors, "border");
+  }
+
+  &-body {
+    padding: $padding;
+  }
+}

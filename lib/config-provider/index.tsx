@@ -1,4 +1,5 @@
 import React, { createContext } from "react"
+import _ from "lodash"
 
 export type IUiContext = {
   ns?: string
@@ -15,9 +16,7 @@ export const Provider: React.FC = ({ children }) => {
     ns: "kb",
   }
 
-  const getPrefix = (element: string) => {
-    return `${defaultConfig.ns}__${element}`
-  }
+  const getPrefix = (element: string) => `${defaultConfig.ns}__${element}`
 
   const _providerValue = () => {
     return {
