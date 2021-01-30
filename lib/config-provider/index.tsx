@@ -10,7 +10,7 @@ export const UiContext = createContext<IUiContext>({
   getPrefix: () => "",
 })
 
-export const UiContextProvider: React.FC = ({ children }) => {
+export const Provider: React.FC = ({ children }) => {
   const defaultConfig = {
     ns: "kb",
   }
