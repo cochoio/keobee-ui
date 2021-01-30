@@ -27,7 +27,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const prefixClass = getPrefix("button")
 
     const _className = cx(prefixClass, [
-      `${prefixClass}__${variant}`,
+      `${prefixClass}--${variant}`,
       className,
     ])
 

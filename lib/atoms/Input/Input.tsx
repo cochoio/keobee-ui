@@ -15,7 +15,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const prefixClass = getPrefix("input")
 
     const _className = cx(prefixClass, [
-      `${prefixClass}__${variant}`,
+      `${prefixClass}--${variant}`,
       className,
     ])
 

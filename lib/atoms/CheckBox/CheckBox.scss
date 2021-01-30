@@ -1,6 +1,6 @@
 @import "../../style/import";
 
-.#{$prefix}--checkbox {
+.#{$prefix}__checkbox {
   @include base;
   display: inline-block;
   vertical-align: middle;

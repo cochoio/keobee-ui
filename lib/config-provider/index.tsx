@@ -16,7 +16,7 @@ export const UiContextProvider: React.FC = ({ children }) => {
   }
 
   const getPrefix = (element: string) => {
-    return `${defaultConfig.ns}--${element}`
+    return `${defaultConfig.ns}__${element}`
   }
 
   const _providerValue = () => {

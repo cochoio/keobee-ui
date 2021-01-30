@@ -1,5 +1,3 @@
-@import "colors";
-
 @mixin fonts($weight: 300, $size: 12px) {
   font-family: "Nanum Gothic", sans-serif;
   font-size: $size;

@@ -19,8 +19,8 @@ export const CheckBox = React.forwardRef<HTMLInputElement, CheckBoxProps>(
       )
     }, [])
 
-    const ui = useContext(UiContext)
-    const prefixClass = `${ui.ns}--checkbox`
+    const { getPrefix } = useContext(UiContext)
+    const prefixClass = getPrefix("checkbox")
 
     const _className = cx(prefixClass, `${prefixClass}__${variant}`, [
       `${prefixClass}`,

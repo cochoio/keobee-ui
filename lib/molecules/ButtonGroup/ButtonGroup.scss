@@ -1,0 +1,23 @@
+@import "../../style/import";
+
+.#{$prefix}__button-group {
+  .#{$prefix}__button {
+    position: relative;
+    &:after {
+      content: "";
+      height: 20px;
+      width: 1px;
+      position: absolute;
+      top: 50%;
+      right: -1px;
+      background-color: getColor("border", 80);
+      transform: translateY(-50%);
+    }
+
+    &:last-child {
+      &:after {
+        content: none;
+      }
+    }
+  }
+}

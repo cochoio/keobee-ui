@@ -1,0 +1,3 @@
+@function getColor($type, $opacity) {
+  @return #{map-get($colors, $type)} + $opacity;
+}

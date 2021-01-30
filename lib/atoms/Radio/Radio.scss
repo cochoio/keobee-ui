@@ -1,6 +1,6 @@
 @import "../../style/import.scss";
 
-.#{$prefix}--radio {
+.#{$prefix}__radio {
   @include base;
   display: inline-block;
   vertical-align: middle;
