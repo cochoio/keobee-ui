@@ -2,6 +2,9 @@
 
 React Admin Template UI
 
+![UI Component Build](https://github.com/linkube-team/keobee-ui/workflows/UI%20Component%20Build/badge.svg)
+![dev test](https://github.com/linkube-team/keobee-ui/workflows/dev%20test/badge.svg)
+
 ## Getting Start
 
 _yarn_
