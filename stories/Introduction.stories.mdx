@@ -13,7 +13,13 @@ import { UiContextProvider } from "keobee-ui"
 
 import "keobee-ui/index.css"
 
-;<UiContextProvider>
-  <App />
-</UiContextProvider>
+const MyApp = () => {
+  return (
+    <UiContextProvider>
+      <App />
+    </UiContextProvider>
+  )
+}
+
+export default MyApp
 ```
