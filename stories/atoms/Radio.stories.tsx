@@ -6,6 +6,9 @@ import { action } from "@storybook/addon-actions"
 export default {
   title: "@atoms/Radio",
   component: Radio,
+  subcomponents: {
+    "Radio.Button": Radio.Button,
+  },
 } as Meta
 
 const Template: Story<RadioProps> = (args) => {
@@ -16,6 +19,13 @@ const Template: Story<RadioProps> = (args) => {
       <hr />
       <Radio onChange={action("change")} name="size" label="size-big" />
       <Radio onChange={action("change")} name="size" label="size-small" />
+      <hr />
+      <Radio.Button name="gender" onChange={action("change")}>
+        Gender: 남성
+      </Radio.Button>
+      <Radio.Button name="gender" onChange={action("change")}>
+        Gender: 여성
+      </Radio.Button>
     </>
   )
 }

@@ -16,7 +16,8 @@ export const Provider: React.FC = ({ children }) => {
     ns: "kb",
   }
 
-  const getPrefix = (element: string) => `${defaultConfig.ns}__${element}`
+  const getPrefix = (element: string) =>
+    `${defaultConfig.ns}__${_.kebabCase(element)}`
 
   const _providerValue = () => {
     return {

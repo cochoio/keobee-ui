@@ -30,3 +30,14 @@
   min-width: 155px;
   text-align: start;
 }
+
+@mixin btn {
+  @include size;
+
+  background-color: map-get($colors, "primary");
+  border: 1px solid transparent;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+}
