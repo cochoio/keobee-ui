@@ -1,0 +1,18 @@
+@import "../../style/import";
+
+.#{$prefix}__radio-button {
+  & > input[type="radio"] {
+    display: none;
+
+    & + span {
+      @include btn;
+      background-color: #ffffff;
+      color: map-get($map: $colors, $key: "dark");
+    }
+
+    &:checked + span {
+      background-color: map-get($map: $colors, $key: "primary");
+      color: #ffffff;
+    }
+  }
+}

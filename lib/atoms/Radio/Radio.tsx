@@ -1,6 +1,7 @@
 import React from "react"
 import { useUi } from "@lib/hooks"
 import cx from "classnames"
+import { RadioButton } from "./RadioButton"
 
 import "./Radio.scss"
 
@@ -10,7 +11,7 @@ export type RadioProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: JSX.Element | string
 }
 
-export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
+const _Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   ({ className, label, ...props }, ref) => {
     const { getPrefix } = useUi()
 
@@ -26,3 +27,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     )
   },
 )
+
+export const Radio = Object.assign(_Radio, {
+  Button: RadioButton,
+})
