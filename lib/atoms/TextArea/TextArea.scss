@@ -1,0 +1,19 @@
+@import "../../style/import.scss";
+
+.#{$prefix}__textarea {
+  @include base;
+
+  &--primary {
+    border: 1px solid map-get($colors, "primary");
+    padding: 10px;
+    min-width: 300px;
+    min-height: 100px;
+  }
+  &:focus {
+    border: 2px solid map-get($colors, "primary");
+  }
+  &:disabled {
+    background-color: map-get($colors, "disabled");
+    cursor: not-allowed;
+  }
+}
