@@ -9,7 +9,9 @@ export default {
 } as Meta
 
 const Template: Story<TextAreaProps> = (args) => {
-  return <TextArea {...args} onClick={action("click")} />
+  return (
+    <TextArea {...args} onChange={action("change")} onClick={action("click")} />
+  )
 }
 
 export const Basic = Template.bind({})
