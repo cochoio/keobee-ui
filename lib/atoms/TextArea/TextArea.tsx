@@ -1,8 +1,8 @@
-import React, { useContext } from "react"
+import React from "react"
 import cx from "classnames"
 
-import { UiContext } from "@lib/config-provider"
 import "./TextArea.scss"
+import { useUi } from "@lib/hooks"
 
 export type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   variant?: "primary"
@@ -10,7 +10,7 @@ export type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & 
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
   ({ className, variant = "primary", ...props }, ref) => {
-    const { getPrefix } = useContext(UiContext)
+    const { getPrefix } = useUi()
     const prefixClass = getPrefix("textarea")
 
     const _className = cx(prefixClass, [
