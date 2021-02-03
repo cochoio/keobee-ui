@@ -11,5 +11,6 @@ module.exports = {
     "selector-list-comma-newline-after": null,
     "no-descending-specificity": null,
     "declaration-colon-newline-after": null,
+    "color-hex-length": null,
   },
 }
