@@ -2,10 +2,10 @@
 
 .#{$prefix}__textarea {
   @include base;
+  @include size;
 
   &--primary {
     border: 1px solid map-get($colors, "primary");
-    padding: 10px;
     min-width: 300px;
     min-height: 100px;
   }
