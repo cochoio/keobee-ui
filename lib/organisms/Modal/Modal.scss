@@ -1,0 +1,35 @@
+@import "../../style/import";
+
+.#{$prefix}__modal {
+  display: none;
+
+  &[aria-hidden="false"] {
+    display: block;
+  }
+
+  &--overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #{map-get($map: $colors, $key: "dark")}66;
+    overflow: hidden;
+  }
+
+  &--content {
+    border: 1px solid #{map-get($map: $colors, $key: "border")};
+    background-color: #ffffff;
+    transition: all 300ms;
+    display: block;
+    max-width: 50%;
+    min-height: 300px;
+    position: absolute;
+    top: -300px;
+    left: 50%;
+
+    &.open {
+      top: 0;
+    }
+  }
+}

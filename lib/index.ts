@@ -9,3 +9,5 @@ export * from "./atoms/Select"
 
 export * from "./molecules/ButtonGroup"
 export * from "./molecules/Panel"
+
+export * from "./organisms/Modal"
