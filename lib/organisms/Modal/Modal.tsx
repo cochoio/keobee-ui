@@ -1,20 +1,25 @@
-import React, { useEffect, useRef } from "react"
-import ReactDOM from "react-dom"
+import React from "react"
 import cx from "classnames"
+import { Transition } from "react-transition-group"
 import { useUi } from "@lib/hooks"
 import { Portal } from "./Portal"
 
 import "./Modal.scss"
+import { TransitionProps } from "react-transition-group/Transition"
 
-export type ModalProps = {
+export type ModalProps = TransitionProps & {
   open?: boolean
   node?: HTMLElement
+  size?: "xsmall" | "small" | "medium" | "large" | "xlarge"
+  onClose?: () => void
 }
 
 export const Modal: React.FC<ModalProps> = ({
   children,
   node = document.body,
   open = false,
+  size = "medium",
+  onClose,
   ...props
 }) => {
   const { getPrefix } = useUi()
@@ -22,29 +27,46 @@ export const Modal: React.FC<ModalProps> = ({
   const prefix = getPrefix("modal")
 
   const classes = cx([prefix])
-  const overlayClass = cx([`${prefix}--overlay`])
-  const contentClass = cx([`${prefix}--content`], { open })
-
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    console.log("click")
-  }
 
   const handleContentClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
-    console.log("content click")
+  }
+
+  const _onClose = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    onClose && onClose()
   }
 
   return (
-    <Portal node={node}>
-      <div className={classes} aria-hidden={!open}>
-        <div className={overlayClass} onClick={handleClick}>
-          <div className={contentClass} onClick={handleContentClick}>
-            {children}
-          </div>
-        </div>
-      </div>
-    </Portal>
+    <>
+      <Portal node={node}>
+        <Transition timeout={150} in={open} mountOnEnter unmountOnExit>
+          {(state) => (
+            <div
+              aria-hidden={state !== "entered" && state !== "entering"}
+              className={cx([classes, `${classes}--${state}`])}>
+              <div
+                className={cx([
+                  `${prefix}--overlay`,
+                  `${prefix}--overlay--${state}`,
+                ])}
+                onClick={_onClose}>
+                <div
+                  className={cx([
+                    `${prefix}--content`,
+                    `${prefix}--content--${state}`,
+                    `${prefix}--content--${size}`,
+                  ])}
+                  onClick={handleContentClick}>
+                  {children}
+                </div>
+              </div>
+            </div>
+          )}
+        </Transition>
+      </Portal>
+    </>
   )
 }
