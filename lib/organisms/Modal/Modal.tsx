@@ -5,7 +5,6 @@ import { useUi } from "@lib/hooks"
 import { Portal } from "./Portal"
 
 import "./Modal.scss"
-import { TransitionProps } from "react-transition-group/Transition"
 
 export type ModalProps = TransitionProps & {
   open?: boolean
