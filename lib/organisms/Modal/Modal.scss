@@ -1,0 +1,88 @@
+@import "../../style/import";
+
+.#{$prefix}__modal {
+  display: block;
+
+  //   &--entering {
+  //   }
+  //   &--entered {
+  //   }
+
+  //   &--exiting {
+  //   }
+  &--exited {
+    display: none;
+    transition: all 150ms linear;
+  }
+}
+
+.#{$prefix}__modal--overlay {
+  $overlay-color: #{map-get(
+      $map: $colors,
+      $key: "dark",
+    )};
+
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #{$overlay-color}00;
+  transition: background-color 150ms linear;
+  &--entering {
+    background-color: #{$overlay-color}70;
+  }
+  &--entered {
+    background-color: #{$overlay-color}70;
+  }
+
+  &--exiting {
+    background-color: #{$overlay-color}00;
+  }
+  &--exited {
+    background-color: #{$overlay-color}00;
+  }
+}
+
+.#{$prefix}__modal--content {
+  @include size;
+  transition: all 150ms ease-in-out;
+  background-color: #ffffff;
+  margin: 40px auto;
+  transform: translateY(-100px);
+  opacity: 0;
+  // size
+  &--xsmall {
+    width: 360px;
+  }
+  &--small {
+    width: 420px;
+  }
+  &--medium {
+    width: 650px;
+  }
+  &--large {
+    width: 860px;
+  }
+  &--xlarge {
+    width: 1200px;
+  }
+
+  &--entering {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &--entered {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &--exiting {
+    opacity: 0;
+  }
+  &--exited {
+    opacity: 0;
+    transition: all 150ms ease-out;
+  }
+}

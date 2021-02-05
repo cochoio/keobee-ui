@@ -10,3 +10,5 @@ export * from "./atoms/TextArea"
 
 export * from "./molecules/ButtonGroup"
 export * from "./molecules/Panel"
+
+export * from "./organisms/Modal"
