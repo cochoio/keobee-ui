@@ -7,6 +7,7 @@ import { Portal } from "./Portal"
 import { TransitionProps } from "react-transition-group/Transition"
 
 import "./Modal.scss"
+import { TransitionProps } from "react-transition-group/Transition"
 
 export type ModalProps = TransitionProps & {
   open?: boolean
