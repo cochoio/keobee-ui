@@ -5,7 +5,7 @@ import cx from "classnames"
 import "./Button.scss"
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "primary"
+  variant?: "primary" | "success" | "danger" | "warning"
   size?: "small" | "medium" | "large" | "xlarge"
   disabled?: boolean
 }
@@ -17,6 +17,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "primary",
       type = "button",
       disabled = false,
+      size = "medium",
       className,
       ...rest
     },
