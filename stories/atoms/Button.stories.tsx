@@ -19,6 +19,18 @@ const Template: Story<ButtonProps> = (args) => {
 export const Primary = Template.bind({})
 
 Primary.args = {
-  size: "small",
   disabled: false,
+  variant: "primary",
+}
+
+export const Danger = Template.bind({})
+
+Danger.args = {
+  variant: "danger",
+}
+
+export const Success = Template.bind({})
+
+Success.args = {
+  variant: "success",
 }
