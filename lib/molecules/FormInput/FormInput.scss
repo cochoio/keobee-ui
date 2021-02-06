@@ -1,0 +1,13 @@
+@import "../../style/import";
+
+.#{$prefix}__form-input {
+  &__form-group {
+    display: inline-block;
+  }
+
+  &__title {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+}
