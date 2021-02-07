@@ -5,7 +5,7 @@
     "react",
     "react-ui"
   ],
-  "homepage": "https://ui.linkube.com",
+  "homepage": "https://keobee-ui.netlify.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/linkube-team/keobee-ui"
@@ -18,8 +18,8 @@
   },
   "contributors": [
     {
-      "email": "jehy0807@gmail.com",
       "name": "JiEun-Choi-Dev",
+      "email": "jehy0807@gmail.com",
       "url": "https://github.com/JiEun-Choi-Dev"
     }
   ],
@@ -31,7 +31,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c",
-    "build-storybook": "build-storybook",
+    "build-storybook": "NODE_ENV=production build-storybook",
     "lint": "yarn lint:js && yarn lint:scss",
     "lint:js": "eslint './lib/**/*.{ts,tsx,js,jsx}'",
     "lint:scss": "stylelint ./lib/**/*.scss",

@@ -1,4 +1,4 @@
-name: UI Component Build
+name: release build
 
 on:
   push:
@@ -38,16 +38,6 @@ jobs:
 
       - name: Building UI Component
         run: npm run build-storybook
-
-      - uses: shallwefootball/s3-upload-action@master
-        name: Upload S3
-        id: S3
-        with:
-          aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-          aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: "storybook-static"
-          destination_dir: ""
 
       - uses: JS-DevTools/npm-publish@v1
         with:
