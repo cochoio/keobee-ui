@@ -16,7 +16,13 @@
     "email": "thtjwls@gmail.com",
     "url": "https://github.com/ziponia"
   },
-  "contributors": [],
+  "contributors": [
+    {
+      "email": "jehy0807@gmail.com",
+      "name": "JiEun-Choi-Dev",
+      "url": "https://github.com/JiEun-Choi-Dev"
+    }
+  ],
   "main": "dist/index.js",
   "types": "dist/lib/index.d.ts",
   "files": [
