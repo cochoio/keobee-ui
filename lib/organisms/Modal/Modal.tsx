@@ -1,6 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import cx from "classnames"
-import { Transition } from "react-transition-group"
+import {
+  Transition,
+  CSSTransition,
+  TransitionGroup,
+  SwitchTransition,
+} from "react-transition-group"
 import { useUi } from "@lib/hooks"
 import { Portal } from "./Portal"
 
@@ -24,49 +29,57 @@ export const Modal: React.FC<ModalProps> = ({
   ...props
 }) => {
   const { getPrefix } = useUi()
+  const [appear, setAppear] = useState(false)
 
   const prefix = getPrefix("modal")
 
-  const classes = cx([prefix])
+  const rootClass = cx(`${prefix}-root`, {
+    appear,
+  })
 
-  const handleContentClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    e.stopPropagation()
-  }
-
+  const overlayClass = cx(`${prefix}--overlay`)
+  const containerClass = cx(
+    `${prefix}--container`,
+    `${prefix}--container--${size}`,
+  )
   const _onClose = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
     onClose && onClose()
   }
 
+  const handleEnter = () => {
+    setTimeout(() => setAppear(true), 0)
+
+    window.addEventListener("keydown", _handleESCKeyPress, false)
+  }
+
+  const handleExiting = () => {
+    setAppear(false)
+    window.removeEventListener("keydown", _handleESCKeyPress, false)
+  }
+
+  const _handleESCKeyPress = (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      _onClose(e as any)
+    }
+  }
+
   return (
     <>
       <Portal node={node}>
-        <Transition timeout={150} in={open} mountOnEnter unmountOnExit>
-          {(state) => (
-            <div
-              aria-hidden={state !== "entered" && state !== "entering"}
-              className={cx([classes, `${classes}--${state}`])}>
-              <div
-                className={cx([
-                  `${prefix}--overlay`,
-                  `${prefix}--overlay--${state}`,
-                ])}
-                onClick={_onClose}>
-                <div
-                  className={cx([
-                    `${prefix}--content`,
-                    `${prefix}--content--${state}`,
-                    `${prefix}--content--${size}`,
-                  ])}
-                  onClick={handleContentClick}>
-                  {children}
-                </div>
-              </div>
-            </div>
-          )}
-        </Transition>
+        <CSSTransition
+          onExiting={handleExiting}
+          onEnter={handleEnter}
+          timeout={100}
+          in={open}
+          mountOnEnter
+          unmountOnExit>
+          <div className={rootClass}>
+            <div className={overlayClass} onClick={_onClose} />
+            <div className={containerClass}>{children}</div>
+          </div>
+        </CSSTransition>
       </Portal>
     </>
   )
