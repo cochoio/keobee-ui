@@ -20,7 +20,7 @@ const Template: Story<ModalProps> = (args) => {
   return (
     <>
       <Button onClick={() => setOpen(!open)}>open modal</Button>
-      <Modal {...args} key="test" open={open} onClose={() => setOpen(false)}>
+      <Modal {...args} open={open} onClose={() => setOpen(false)}>
         <h1>this is my modal</h1>
       </Modal>
     </>
@@ -30,7 +30,7 @@ const Template: Story<ModalProps> = (args) => {
 export const Basic = Template.bind({})
 
 Basic.args = {
-  open: true,
+  open: false,
   node: document.body,
   onClose: () => null,
 }
