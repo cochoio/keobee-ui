@@ -19,4 +19,5 @@ export const Basic = Template.bind({})
 Basic.args = {
   disabled: false,
   placeholder: "Leave your comment.",
+  value: "",
 }

@@ -37,5 +37,12 @@
         color: #ffffff;
       }
     }
+
+    &:disabled + span {
+      background-color: map-get($colors, "disabled");
+      color: map-get($colors, "disabled-dark");
+      border: 1px solid map-get($colors, "disabled-dark");
+      cursor: not-allowed;
+    }
   }
 }

@@ -11,11 +11,13 @@ export default {
 const Template: Story<CheckBoxProps> = (args) => {
   return (
     <>
-      <CheckBox onChange={action("change")} />
+      <CheckBox onChange={action("change")} {...args} />
     </>
   )
 }
 
-export const Primary = Template.bind({})
+export const Basic = Template.bind({})
 
-Primary.args = {}
+Basic.args = {
+  disabled: false,
+}
