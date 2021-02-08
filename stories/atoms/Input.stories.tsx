@@ -9,9 +9,13 @@ export default {
 } as Meta
 
 const Template: Story<InputProps> = (args) => {
-  return <Input onChange={action("change")} />
+  return <Input onChange={action("change")} {...args} />
 }
 
-export const Default = Template.bind({})
+export const Basic = Template.bind({})
 
-Default.args = {}
+Basic.args = {
+  disabled: false,
+  placeholder: "entered input...",
+  value: "",
+}

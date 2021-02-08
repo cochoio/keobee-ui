@@ -21,7 +21,7 @@
   padding: 7px 14px;
 }
 
-@mixin input {
+@mixin input($disable: false) {
   @include size;
 
   background-color: #fff;
