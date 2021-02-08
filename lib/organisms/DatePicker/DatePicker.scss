@@ -1,0 +1,107 @@
+@import "../../style/import.scss";
+
+.#{$prefix}__calednar {
+  border-radius: unset;
+  border: 1px solid map-get($colors, "border") !important;
+  top: -11px;
+  left: -1px;
+
+  .react-datepicker {
+    font-size: 1.3rem !important;
+  }
+  .react-datepicker__triangle {
+    display: none;
+  }
+
+  .btn_month {
+    background: none;
+    line-height: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+    top: 10px;
+    width: 0;
+    padding: 0;
+    border: 0.45rem solid transparent;
+    z-index: 1;
+    height: 10px;
+    width: 10px;
+    text-indent: -999em;
+    overflow: hidden;
+  }
+  .btn_month-prev {
+    border-right-color: #fff;
+  }
+  .btn_month-next {
+    border-left-color: #fff;
+  }
+  .month-day {
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .react-datepicker__current-month {
+    font-size: 1.5rem !important;
+    color: #fff;
+  }
+
+  .react-datepicker__header {
+    padding-top: 6px;
+    background-color: map-get($colors, "primary");
+    border-bottom: transparent;
+    border-radius: unset;
+  }
+  .react-datepicker__navigation {
+    top: 13px;
+  }
+  .react-datepicker__week {
+    padding: 1px;
+  }
+  .react-datepicker__day-names {
+    background-color: #fff;
+  }
+  .react-datepicker__day-name {
+    font-size: 1rem;
+    color: #000;
+    padding: 1px;
+  }
+  .react-datepicker__day-name,
+  .react-datepicker__day {
+    margin: 0.5rem;
+    font-size: 1rem;
+  }
+  .react-datepicker__day {
+    padding: 1px;
+  }
+  .react-datepicker__day:hover {
+    border-radius: 50%;
+    background-color: #dbe7ff;
+    padding: 1px;
+  }
+  .react-datepicker__day--disabled {
+    color: #cccccc !important;
+  }
+  .react-datepicker__day--selected {
+    background-color: map-get($colors, "primary");
+    border-radius: 50%;
+    padding: 1px;
+  }
+  .react-datepicker__day--keyboard-selected,
+  .react-datepicker__month-text--keyboard-selected,
+  .react-datepicker__quarter-text--keyboard-selected,
+  .react-datepicker__year-text--keyboard-selected {
+    background-color: map-get($colors, "primary");
+    border-radius: 50%;
+    padding: 1px;
+  }
+
+  .react-datepicker__day-name:nth-child(1) {
+    color: #ff5249;
+  }
+  .react-datepicker__day--outside-month {
+    color: #ccc !important;
+  }
+  .sunday {
+    color: #ff5249;
+  }
+}
