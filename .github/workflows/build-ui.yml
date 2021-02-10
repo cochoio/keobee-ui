@@ -39,6 +39,26 @@ jobs:
       - name: Building UI Component
         run: npm run build-storybook
 
+      - name: git config
+        run: |
+          git config user.name ziponia
+          git config user.email thtjwls@gmail.com
+
+      - name: Conventional Changelog Action
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.github_token }}
+          git-message: "{version}"
+          git-user-name: "ziponia"
+          git-user-email: "thtjwls@gmail.com"
+          preset: "angular"
+          tag-prefix: "v"
+          output-file: "CHANGELOG.md"
+          release-count: "10"
+          skip-on-empty: "false"
+          skip-version-file: "false"
+          skip-commit: "false"
+
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
