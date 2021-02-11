@@ -1,9 +1,9 @@
 html,
 body {
   background-color: #edf0f5;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 a,
@@ -11,8 +11,9 @@ button,
 input,
 select,
 textarea {
-  font-family: "Nanum Gothic", sans-serif;
-  font-weight: 300;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+
   &:focus {
     outline: none;
   }
