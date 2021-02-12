@@ -8,6 +8,8 @@ React Admin Template UI
 
 ## Getting Start
 
+[Demo](https://keobee-ui.netlify.app/)
+
 _yarn_
 
 ```
@@ -17,6 +19,8 @@ yarn add keobee-ui
 ```
 
 ```tsx
+import React from "react"
+import ReactDOM from "react-dom"
 import { UiContextProvider } from "keobee-ui"
 
 import "keobee-ui/index.css"
@@ -29,5 +33,9 @@ const MyApp = () => {
   )
 }
 
-export default MyApp
+ReactDOM.render(<MyApp />, document.getElementById("myapp"))
 ```
+
+## License
+
+[MIT](./LICENSE)
