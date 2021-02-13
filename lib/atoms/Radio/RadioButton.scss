@@ -6,6 +6,7 @@
 
     & + span {
       @include btn;
+
       background-color: #ffffff;
       color: map-get($map: $colors, $key: "dark");
     }
