@@ -3,19 +3,19 @@
 .#{$prefix}__button-group {
   .#{$prefix}__button {
     position: relative;
-    &:after {
+    &::after {
+      background-color: getcolor("border", 80);
       content: "";
       height: 20px;
-      width: 1px;
       position: absolute;
-      top: 50%;
       right: -1px;
-      background-color: getColor("border", 80);
+      top: 50%;
       transform: translateY(-50%);
+      width: 1px;
     }
 
     &:last-child {
-      &:after {
+      &::after {
         content: none;
       }
     }

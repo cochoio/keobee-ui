@@ -7,8 +7,8 @@ $padding: 20px 35px;
   border: 1px solid map-get($colors, "border");
 
   &-header {
-    padding: $padding;
     border-bottom: 1px solid map-get($colors, "border");
+    padding: $padding;
   }
 
   &-body {
