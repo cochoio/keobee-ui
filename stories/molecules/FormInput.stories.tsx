@@ -12,6 +12,24 @@ export default {
         type: "text",
       },
     },
+    placeholder: {
+      name: "placeholder",
+      control: {
+        type: "text",
+      },
+    },
+    addonBefore: {
+      name: "addonBefore",
+      control: {
+        type: "object",
+      },
+    },
+    addonAfter: {
+      name: "addonBefore",
+      control: {
+        type: "object",
+      },
+    },
   },
 } as Meta
 
@@ -27,6 +45,8 @@ export const Basic = Template.bind({})
 
 Basic.args = {
   disabled: true,
-  label: "username",
-  placeholder: "username",
+  label: "URL",
+  placeholder: "domain",
+  addonBefore: "http://",
+  addonAfter: ".com",
 }
