@@ -1,13 +1,74 @@
 @import "../../style/import";
 
 .#{$prefix}__form-input {
+  @include base;
+  @include input;
+
   &__form-group {
-    display: inline-block;
+    display: inline-table;
   }
 
   &__title {
-    display: block;
+    display: table-cell;
     font-size: 13px;
-    margin-bottom: 5px;
+    padding-left: 14px;
+    padding-right: 14px;
+    white-space: nowrap;
+  }
+
+  &__input-group {
+    position: relative;
+    display: inline-table;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  &__input {
+    display: table-cell;
+  }
+
+  &__addon {
+    position: relative;
+    display: table-cell;
+    padding-left: 14px;
+    padding-right: 14px;
+    color: #6b6e72;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #e3eaf0;
+    border: 1px solid #bac0c5;
+    border-radius: 2px;
+    white-space: nowrap;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  &__addon:first-child {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__addon:last-child {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &__input-group .#{$prefix}__input:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &__input-group .#{$prefix}__input:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
