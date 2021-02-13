@@ -7,10 +7,12 @@ import "./FormInput.scss"
 
 export type FormInputProps = InputProps & {
   label?: string
+  addonBefore?: React.ReactNode
+  addonAfter?: React.ReactNode
 }
 
 export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
-  ({ children, label, ...props }, ref) => {
+  ({ label, addonBefore, addonAfter, ...props }, ref) => {
     const { getPrefix } = useUi()
 
     const prefix = getPrefix("form-input")
@@ -18,10 +20,17 @@ export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
     const wrappedClass = cx([`${prefix}__form-group`])
     const titleClass = cx([`${prefix}__title`])
 
+    const groupClass = cx([`${prefix}__input-group`])
+    const addonClass = cx([`${prefix}__addon`])
+
     return (
       <label className={wrappedClass}>
-        <span className={titleClass}>{label}</span>
-        <Input {...props} ref={ref} />
+        {label && <span className={titleClass}>{label}</span>}
+        <span className={groupClass}>
+          {addonBefore && <span className={addonClass}>{addonBefore}</span>}
+          <Input {...props} ref={ref} />
+          {addonAfter && <span className={addonClass}>{addonAfter}</span>}
+        </span>
       </label>
     )
   },
