@@ -11,7 +11,7 @@
   &:disabled {
     background-color: #{map-get($map: $colors, $key: "disabled")};
     border: 1px solid map-get($colors, "disabled-dark");
-    cursor: not-allowed;
     color: map-get($colors, "disabled-dark");
+    cursor: not-allowed;
   }
 }
