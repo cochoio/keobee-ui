@@ -6,16 +6,16 @@
 
   &--primary {
     border: 1px solid map-get($colors, "primary");
-    min-width: 300px;
     min-height: 100px;
+    min-width: 300px;
   }
   &:focus {
     border: 2px solid map-get($colors, "primary");
   }
   &:disabled {
     background-color: map-get($colors, "disabled");
-    color: map-get($colors, "disabled-dark");
     border: 1px solid map-get($colors, "disabled-dark");
+    color: map-get($colors, "disabled-dark");
     cursor: not-allowed;
   }
 }
