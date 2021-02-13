@@ -34,13 +34,15 @@
     "build-storybook": "NODE_ENV=production build-storybook",
     "lint": "yarn lint:js && yarn lint:scss",
     "lint:js": "eslint './lib/**/*.{ts,tsx,js,jsx}'",
-    "lint:scss": "stylelint ./lib/**/*.scss",
+    "lint:scss": "stylelint ./**/*.scss --config ./.stylelintrc.js -f verbose",
+    "pretty-quick": "pretty-quick --staged --verbose",
+    "sort-package-json": "sort-package-json",
     "storybook": "start-storybook -p 6006",
     "test": "yarn lint"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "sort-package-json && pretty-quick --staged && yarn test"
+      "pre-commit": "yarn sort-package-json && yarn pretty-quick --staged && yarn test"
     }
   },
   "dependencies": {
@@ -94,6 +96,7 @@
     "sass-loader": "^10.1.1",
     "sort-package-json": "^1.48.1",
     "stylelint": "^13.9.0",
+    "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
