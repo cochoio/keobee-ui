@@ -10,6 +10,7 @@ export * from "./atoms/TextArea"
 export * from "./atoms/Badge"
 
 export * from "./molecules/ButtonGroup"
+export * from "./molecules/FormInput"
 export * from "./molecules/Panel"
 
 export * from "./organisms/Modal"
