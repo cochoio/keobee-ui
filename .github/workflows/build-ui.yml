@@ -5,6 +5,9 @@ on:
     branches:
       - master
       - github-actions
+    paths-ignore:
+      - "package.json"
+      - "CHANGELOG.md"
 
 jobs:
   build:
@@ -19,8 +22,10 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
         if: always() # Pick up events even if the job fails or is canceled.
 
-      - name: Checkout source code
-        uses: actions/checkout@v1
+      - name: git checkout release
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
 
       - name: Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -38,11 +43,6 @@ jobs:
 
       - name: Building UI Component
         run: npm run build-storybook
-      
-      - name: git checkout release
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
 
       - name: git config
         run: |
