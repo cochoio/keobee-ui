@@ -17,15 +17,15 @@
   }
 
   &__input-group {
-    position: relative;
-    display: inline-table;
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
     border-collapse: separate;
     border-spacing: 0;
+    box-sizing: border-box;
+    display: inline-table;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
   }
 
   &__input {
@@ -33,42 +33,42 @@
   }
 
   &__addon {
-    position: relative;
-    display: table-cell;
-    padding-left: 14px;
-    padding-right: 14px;
-    color: #6b6e72;
-    font-weight: 400;
-    font-size: 1rem;
-    text-align: center;
-    vertical-align: middle;
     background-color: #e3eaf0;
     border: 1px solid #bac0c5;
     border-radius: 2px;
-    white-space: nowrap;
+    color: #6b6e72;
+    display: table-cell;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-left: 14px;
+    padding-right: 14px;
+    position: relative;
+    text-align: center;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
+    vertical-align: middle;
+    white-space: nowrap;
   }
 
   &__addon:first-child {
+    border-bottom-right-radius: 0;
     border-right: none;
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
   }
 
   &__addon:last-child {
+    border-bottom-left-radius: 0;
     border-left: none;
     border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
   }
 
   &__input-group .#{$prefix}__input:not(:first-child) {
-    border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
   }
 
   &__input-group .#{$prefix}__input:not(:last-child) {
-    border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
   }
 }
