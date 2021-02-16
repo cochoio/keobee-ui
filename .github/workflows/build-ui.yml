@@ -38,6 +38,10 @@ jobs:
 
       - name: Building UI Component
         run: npm run build-storybook
+      
+      - name: git checkout release
+        with:
+          ref: ${{ github.ref }}
 
       - name: git config
         run: |
