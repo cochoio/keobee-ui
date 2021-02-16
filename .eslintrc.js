@@ -25,6 +25,12 @@ module.exports = {
       "error",
       { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     ],
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
     "import/extensions": ["off"],
     "import/no-unresolved": ["off"],
     "no-console": "off",
