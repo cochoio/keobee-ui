@@ -15,3 +15,4 @@ export * from "./molecules/Panel"
 
 export * from "./organisms/Modal"
 export * from "./organisms/DatePicker"
+export * from "./organisms/RangeDatepicker"

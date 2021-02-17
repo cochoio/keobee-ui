@@ -4,7 +4,7 @@ import { DatePicker, DatePickerProps } from "@lib/organisms/DatePicker"
 import { action } from "@storybook/addon-actions"
 
 export default {
-  title: "@organisms/DatePicker",
+  title: "@organisms/Date/DatePicker",
   component: DatePicker,
   argTypes: {
     selected: {
