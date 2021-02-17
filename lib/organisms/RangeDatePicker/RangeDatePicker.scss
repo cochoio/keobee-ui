@@ -1,0 +1,39 @@
+@import "../../style/import.scss";
+@import "../DatePicker/DatePicker.scss";
+
+// @debug "divider offset: #{$prefix}";
+.#{$prefix}__rangeDatepicker {
+  @extend .#{$prefix}__calednar;
+
+  .range-input {
+    @include input;
+    border: 1px solid map-get($colors, "primary");
+  }
+  .react-datepicker__day--in-range {
+    border-radius: 50%;
+    color: #fff !important;
+  }
+
+  .react-datepicker__day--range-end {
+    border-radius: 50%;
+  }
+
+  .react-datepicker__day:hover {
+    border: 6px solid map-get($colors, "secondary") !important;
+    margin: 0;
+    border-radius: unset !important;
+    background-color: map-get($colors, "secondary") !important;
+    color: #fff;
+  }
+  .react-datepicker__day--selected {
+    border: 6px solid map-get($colors, "primary");
+  }
+  .react-datepicker__day--keyboard-selected {
+    border: 6px solid map-get($colors, "primary");
+  }
+
+  .react-datepicker__day--selected {
+    background-color: map-get($colors, "primary") !important;
+    border: 6px solid map-get($colors, "primary") !important;
+  }
+}
