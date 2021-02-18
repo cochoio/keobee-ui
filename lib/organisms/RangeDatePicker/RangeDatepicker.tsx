@@ -38,7 +38,7 @@ export const RangeDatePicker = React.forwardRef<
   return (
     <>
       <DatePicker
-        className={_className}
+        wrapperClassName={_className}
         selected={startDate}
         startDate={startDate}
         endDate={endDate}

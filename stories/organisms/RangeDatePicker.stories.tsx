@@ -16,15 +16,10 @@ export default {
         type: "date",
       },
     },
-    minDate: {
-      defaultValue: new Date(),
+    description: {
+      defaultValue: "via. react-datepicekr",
       control: {
-        type: "date",
-      },
-    },
-    maxDate: {
-      control: {
-        type: "date",
+        type: "text",
       },
     },
   },
@@ -33,13 +28,6 @@ export default {
 const Template: Story<RangeDatePickerProps> = (args) => {
   const [startDate, setStartDate] = useState(args.selected)
   const [endDate, setEndDate] = useState(null)
-  // const onChange_start = (date: Date | [Date, Date]) => {
-  //   setStartDate(date as Date)
-  // }
-  // const onChange_end = (date: Date | [Date, Date]) => {
-  //   setEndDate(date as Date)
-  // }
-
   const onChange = (dates: [any, any]) => {
     const [start, end] = dates
     setStartDate(start)
@@ -68,7 +56,4 @@ export const Basic = Template.bind({})
 
 Basic.args = {
   selected: new Date(),
-  onCalendarOpen: () => null,
-  onCalendarClose: () => null,
-  disabled: false,
 }
