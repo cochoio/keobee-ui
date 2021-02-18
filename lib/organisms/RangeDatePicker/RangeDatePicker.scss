@@ -1,39 +1,66 @@
 @import "../../style/import.scss";
 @import "../DatePicker/DatePicker.scss";
-
 // @debug "divider offset: #{$prefix}";
-.#{$prefix}__rangeDatepicker {
-  @extend .#{$prefix}__calednar;
-
+.#{$prefix}__range-datepicker {
   .range-input {
     @include input;
     border: 1px solid map-get($colors, "primary");
   }
-  .react-datepicker__day--in-range {
-    border-radius: 50%;
-    color: #fff !important;
-  }
-
-  .react-datepicker__day--range-end {
-    border-radius: 50%;
-  }
-
-  .react-datepicker__day:hover {
-    border: 6px solid map-get($colors, "secondary") !important;
-    margin: 0;
-    border-radius: unset !important;
-    background-color: map-get($colors, "secondary") !important;
-    color: #fff;
-  }
-  .react-datepicker__day--selected {
-    border: 6px solid map-get($colors, "primary");
-  }
-  .react-datepicker__day--keyboard-selected {
-    border: 6px solid map-get($colors, "primary");
-  }
-
-  .react-datepicker__day--selected {
-    background-color: map-get($colors, "primary") !important;
-    border: 6px solid map-get($colors, "primary") !important;
+  & + .react-datepicker__tab-loop {
+    .react-datepicker__day--in-range {
+      border: map-get($colors, "secondary");
+      margin: 0;
+      padding: 6px;
+      border-radius: 0;
+      background-color: map-get($colors, "secondary");
+      color: #fff !important;
+    }
+    .react-datepicker__day--in-selecting-range {
+      padding: 6px;
+      border: map-get($colors, "secondary");
+      margin: 0;
+      border-radius: 0;
+      background-color: map-get($colors, "secondary");
+      color: #fff !important;
+    }
+    .react-datepicker__day--in-range:hover {
+      background-color: map-get($colors, "secondary");
+      color: #fff !important;
+      border-radius: unset;
+    }
+    .react-datepicker__day--range-end {
+      border-top-right-radius: 50% !important;
+      border-bottom-right-radius: 50% !important;
+      background-color: map-get($colors, "primary") !important;
+      border: map-get($colors, "primary") !important;
+    }
+    .react-datepicker__day--range-end:hover {
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+    .react-datepicker__day--range-start {
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+      background-color: map-get($colors, "primary");
+    }
+    .react-datepicker__day--range-start:hover {
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+    .react-datepicker__day:hover {
+      border: solid map-get($colors, "secondary") !important;
+      margin: 0;
+      border-radius: unset !important;
+      background-color: map-get($colors, "secondary") !important;
+      color: #fff !important;
+      padding: 3px;
+    }
+    .react-datepicker__day--selected {
+      background-color: map-get($colors, "primary") !important;
+      border: map-get($colors, "primary") !important;
+    }
+    .react-datepicker__day--keyboard-selected {
+      border: map-get($colors, "primary");
+    }
   }
 }
