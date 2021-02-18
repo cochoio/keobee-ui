@@ -71,12 +71,12 @@
     margin: 0.5rem;
   }
   .react-datepicker__day {
-    padding: 1px;
+    padding: 0px;
   }
   .react-datepicker__day:hover {
     background-color: #dbe7ff;
-    border-radius: 50%;
-    padding: 1px;
+    padding: 6px;
+    margin: 0;
   }
   .react-datepicker__day--disabled {
     color: #cccccc !important;
@@ -84,12 +84,13 @@
   .react-datepicker__day--selected {
     background-color: map-get($colors, "primary") !important;
     border-radius: 50%;
-    padding: 1px;
+    padding: 6px;
     color: #fff !important;
     margin: 0;
   }
   .react-datepicker__day--selected:hover {
     background-color: map-get($colors, "primary");
+    padding: 6px;
   }
   .react-datepicker__day--keyboard-selected,
   .react-datepicker__month-text--keyboard-selected,
@@ -98,7 +99,7 @@
     background-color: map-get($colors, "primary");
     color: #fff;
     border-radius: 50%;
-    padding: 1px;
+    padding: 6px;
     margin: 0;
   }
 
@@ -111,49 +112,10 @@
   .sunday {
     color: #ff5249;
   }
-  .react-datepicker__day--in-range {
-    border: 6px solid map-get($colors, "secondary");
-    margin: 0;
-    border-radius: 0;
-    background-color: map-get($colors, "secondary");
-  }
-  .react-datepicker__day--in-range:hover {
-    background-color: map-get($colors, "secondary");
-    color: #fff;
-    border-radius: unset;
-  }
-
-  .react-datepicker__day--range-end {
-    border-top-right-radius: 50% !important;
-    border-bottom-right-radius: 50% !important;
-    background-color: map-get($colors, "primary") !important;
-    border: 6px solid map-get($colors, "primary") !important;
-  }
-  .react-datepicker__day--range-end:hover {
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-  }
-  .react-datepicker__day--range-start {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    background-color: map-get($colors, "primary");
-  }
-  .react-datepicker__day--range-start:hover {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-  }
 
   .react-datepicker__day--selected {
     color: #fff !important;
     border-top-left-radius: 50% !important;
     border-bottom-left-radius: 50% !important;
-  }
-
-  .react-datepicker__day--in-selecting-range {
-    border: 6px solid map-get($colors, "secondary");
-    margin: 0;
-    border-radius: 0;
-    background-color: map-get($colors, "secondary");
-    color: #fff;
   }
 }
