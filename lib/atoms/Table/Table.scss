@@ -1,0 +1,58 @@
+@import "../../style/import.scss";
+
+.#{$prefix}__table {
+  table {
+    background-color: #fff;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th,
+  td {
+    background-color: #fff;
+    border-bottom: 1px solid map-get($colors, "border");
+    padding: 10px;
+    text-align: center;
+  }
+  th {
+    background: map-get($colors, "primary");
+    color: #fff;
+    font-weight: 600;
+  }
+  tr:hover {
+    background: map-get($colors, "secondary");
+  }
+
+  .kb__table-cell-fix-left-first::after,
+  .kb__table-cell-fix-left-last::after {
+    bottom: -1px;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: box-shadow 0.3s;
+    width: 30px;
+  }
+
+  .kb__table-cell-fix-right-first::after,
+  .kb__table-cell-fix-right-last::after {
+    bottom: -1px;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+    transition: box-shadow 0.3s;
+    width: 30px;
+  }
+}
+.kb__table-ping-left .kb__table-cell-fix-left-first::after,
+.kb__table-ping-left .kb__table-cell-fix-left-last::after {
+  box-shadow: inset 10px 0 8px -8px rgb(0 0 0 / 15%);
+}
+.kb__table-ping-right .kb__table-cell-fix-right-first::after,
+.kb__table-ping-right .kb__table-cell-fix-right-last::after {
+  box-shadow: inset -10px 0 8px -8px rgb(0 0 0 / 15%);
+}

@@ -75,8 +75,8 @@
   }
   .react-datepicker__day:hover {
     background-color: #dbe7ff;
-    padding: 6px;
     margin: 0;
+    padding: 6px;
   }
   .react-datepicker__day--disabled {
     color: #cccccc !important;
@@ -84,9 +84,9 @@
   .react-datepicker__day--selected {
     background-color: map-get($colors, "primary") !important;
     border-radius: 50%;
-    padding: 6px;
     color: #fff !important;
     margin: 0;
+    padding: 6px;
   }
   .react-datepicker__day--selected:hover {
     background-color: map-get($colors, "primary");
@@ -97,10 +97,10 @@
   .react-datepicker__quarter-text--keyboard-selected,
   .react-datepicker__year-text--keyboard-selected {
     background-color: map-get($colors, "primary");
-    color: #fff;
     border-radius: 50%;
-    padding: 6px;
+    color: #fff;
     margin: 0;
+    padding: 6px;
   }
 
   .react-datepicker__day-name:nth-child(1) {
@@ -114,8 +114,8 @@
   }
 
   .react-datepicker__day--selected {
-    color: #fff !important;
-    border-top-left-radius: 50% !important;
     border-bottom-left-radius: 50% !important;
+    border-top-left-radius: 50% !important;
+    color: #fff !important;
   }
 }

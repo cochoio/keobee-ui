@@ -45,6 +45,11 @@
       "pre-commit": "yarn sort-package-json && yarn pretty-quick --staged && yarn test"
     }
   },
+  "dependencies": {
+    "@types/react-window": "^1.8.2",
+    "rc-table": "^7.13.1",
+    "react-window": "^1.8.6"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
@@ -57,6 +62,7 @@
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
+    "@storybook/addon-storysource": "^6.1.20",
     "@storybook/react": "^6.1.15",
     "@types/classnames": "^2.2.11",
     "@types/lodash": "^4.14.168",
