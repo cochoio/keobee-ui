@@ -4,7 +4,7 @@
   .#{$prefix}__button {
     position: relative;
     &::after {
-      background-color: getcolor("border", 80);
+      background-color: getColor("border", 80);
       content: "";
       height: 20px;
       position: absolute;

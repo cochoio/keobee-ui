@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from "react"
-import { Story, Meta } from "@storybook/react/types-6-0"
+import React from "react"
+import { Meta, Story } from "@storybook/react/types-6-0"
 import { Table, TableProps } from "@lib/atoms/Table"
+import { ColumnsType } from "rc-table/lib/interface"
 
 export default {
   title: "@atoms/Table/FixedTable",
@@ -8,8 +9,15 @@ export default {
   argTypes: {},
 } as Meta
 
-const Template: Story<TableProps<any>> = (args) => {
-  const columns = [
+type DataType = {
+  key: any
+  name: string
+  age: number
+  address: string
+}
+
+const Template: Story<TableProps<DataType>> = (args) => {
+  const columns: ColumnsType<DataType> = [
     {
       title: "Full Name",
       width: 100,
@@ -91,7 +99,7 @@ const Template: Story<TableProps<any>> = (args) => {
     },
   ]
 
-  return <Table {...args} columns={columns} data={data} />
+  return <Table<DataType> {...args} columns={columns} data={data} />
 }
 
 export const FixedHeader = Template.bind({})
